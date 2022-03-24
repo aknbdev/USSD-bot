@@ -34,15 +34,6 @@ public class Start {
         return codeMessage;
     }
 
-    public CodeMessage defaultMessage(Message message) {
-        sendMessage.setChatId(String.valueOf(message.getChatId()));
-        sendMessage.setText("Botdan foydalanish uchun /start tugmasini bosing!");
-        sendMessage.enableMarkdown(true);
-        codeMessage.setSendMessage(sendMessage);
-        codeMessage.setCodeMessageType(CodeMessageType.MESSAGE);
-        return codeMessage;
-    }
-
     public CodeMessage unknownMessage(Message message){
         sendMessage.setChatId(String.valueOf(message.getChatId()));
         sendMessage.setText("Kutilmagan buyruq!");

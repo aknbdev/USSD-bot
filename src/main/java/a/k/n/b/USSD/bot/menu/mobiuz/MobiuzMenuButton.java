@@ -145,8 +145,8 @@ public class MobiuzMenuButton {
         SendMessage sendMessage = new SendMessage();
         String text = message.getText();
         MB mb = mtmsMobiuzRepository.getMbMap().get(text);
+        sendMessage.setChatId(String.valueOf(message.getChatId()));
         if (mb!=null){
-            sendMessage.setChatId(String.valueOf(message.getChatId()));
             sendMessage.enableHtml(true);
             sendMessage.setText(
                     "Mobiuz foydalanuvchisi uchun <b>" + mb.getMb() + "</b> paketi" +
@@ -183,8 +183,8 @@ public class MobiuzMenuButton {
         SendMessage sendMessage = new SendMessage();
         String text = message.getText();
         Daq daq = mtmsMobiuzRepository.getDaqMap().get(text);
+        sendMessage.setChatId(String.valueOf(message.getChatId()));
         if (daq!=null){
-            sendMessage.setChatId(String.valueOf(message.getChatId()));
             sendMessage.enableHtml(true);
             sendMessage.setText(
                     "Mobiuz foydalanuvchisi uchun <b>" + daq.getMinute() + "</b> paketi" +
@@ -222,8 +222,8 @@ public class MobiuzMenuButton {
         SendMessage sendMessage = new SendMessage();
         String text = message.getText();
         SMS sms = mtmsMobiuzRepository.getSmsMap().get(text);
+        sendMessage.setChatId(String.valueOf(message.getChatId()));
         if (sms!=null){
-            sendMessage.setChatId(String.valueOf(message.getChatId()));
             sendMessage.enableHtml(true);
             sendMessage.setText(
                     "Mobiuz foydalanuvchisi uchun <b>" + sms.getSms() + "</b> paketi" +
@@ -260,6 +260,7 @@ public class MobiuzMenuButton {
         SendMessage sendMessage = new SendMessage();
         String text = message.getText();
         USSD ussd = mtmsMobiuzRepository.getUssdMap().get(text);
+        sendMessage.setChatId(String.valueOf(message.getChatId()));
         if (ussd!=null){
             sendMessage.enableHtml(true);
             sendMessage.setText(
@@ -288,7 +289,6 @@ public class MobiuzMenuButton {
         } else{
             sendMessage.setText("⚠️ Kutilmagan buyruq...");
         }
-        sendMessage.setChatId(String.valueOf(message.getChatId()));
         return sendMessage;
     }
 }

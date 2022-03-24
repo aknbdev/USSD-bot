@@ -49,7 +49,7 @@ public class MessageHandler {
                     codeMessage = beelineMenu.handle(message);
                     menu.getMenuMap().put(message.getChatId(), MenuType.BEELINE);
                 }
-                default -> codeMessage = start.defaultMessage(message);
+                default -> codeMessage = start.unknownMessage(message);
             }
         } else if (menuType!=null){
             if (menuType.equals(MenuType.TELECOM)){

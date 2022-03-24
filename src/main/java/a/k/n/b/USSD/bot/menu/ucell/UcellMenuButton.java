@@ -145,8 +145,8 @@ public class UcellMenuButton {
         SendMessage sendMessage = new SendMessage();
         String text = message.getText();
         MB mb = mtmsRepository.getMbMap().get(text);
+        sendMessage.setChatId(String.valueOf(message.getChatId()));
         if (mb!=null){
-            sendMessage.setChatId(String.valueOf(message.getChatId()));
             sendMessage.enableHtml(true);
             sendMessage.setText(
                     "Ucell foydalanuvchisi uchun <b>" + mb.getMb() + "</b> paketi" +
@@ -183,8 +183,8 @@ public class UcellMenuButton {
         SendMessage sendMessage = new SendMessage();
         String text = message.getText();
         Daq daq = mtmsRepository.getDaqMap().get(text);
+        sendMessage.setChatId(String.valueOf(message.getChatId()));
         if (daq!=null){
-            sendMessage.setChatId(String.valueOf(message.getChatId()));
             sendMessage.enableHtml(true);
             sendMessage.setText(
                     "Ucell foydalanuvchisi uchun <b>" + daq.getMinute() + "</b> paketi" +
@@ -221,8 +221,8 @@ public class UcellMenuButton {
         SendMessage sendMessage = new SendMessage();
         String text = message.getText();
         SMS sms = mtmsRepository.getSmsMap().get(text);
+        sendMessage.setChatId(String.valueOf(message.getChatId()));
         if (sms!=null){
-            sendMessage.setChatId(String.valueOf(message.getChatId()));
             sendMessage.enableHtml(true);
             sendMessage.setText(
                     "Ucell foydalanuvchisi uchun <b>" + sms.getSms() + "</b> paketi" +
@@ -259,6 +259,7 @@ public class UcellMenuButton {
         SendMessage sendMessage = new SendMessage();
         String text = message.getText();
         USSD ussd = mtmsRepository.getUssdMap().get(text);
+        sendMessage.setChatId(String.valueOf(message.getChatId()));
         if (ussd!=null){
             sendMessage.enableHtml(true);
             sendMessage.setText(
@@ -287,7 +288,6 @@ public class UcellMenuButton {
         } else{
             sendMessage.setText("⚠️ Kutilmagan buyruq...");
         }
-        sendMessage.setChatId(String.valueOf(message.getChatId()));
         return sendMessage;
     }
 }
