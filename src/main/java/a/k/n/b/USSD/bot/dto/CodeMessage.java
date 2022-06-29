@@ -8,8 +8,8 @@ import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageTe
 
 @Component @Data
 public class CodeMessage {
-    private EditMessageMedia editMessageMedia;
     private CodeMessageType codeMessageType;
+    private EditMessageMedia editMessageMedia;
     private EditMessageText editMessageText;
     private SendLocation sendLocation;
     private SendContact sendContact;

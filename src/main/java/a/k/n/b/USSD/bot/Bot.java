@@ -5,19 +5,20 @@ import a.k.n.b.USSD.bot.handler.ChannelPost;
 import a.k.n.b.USSD.bot.handler.MessageHandler;
 import a.k.n.b.USSD.bot.handler.MyChatMemberHandler;
 import a.k.n.b.USSD.bot.menu.adminPanel.AdminMenu;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 @Component
+@RequiredArgsConstructor
 public class Bot extends TelegramLongPollingBot {
-    @Autowired private MyChatMemberHandler myChatMemberHandler;
-    @Autowired private MessageHandler messageHandler;
-    @Autowired private ChannelPost channelPost;
-    @Autowired private AdminMenu adminMenu;
-    @Autowired private Menu menu;
+    private final MyChatMemberHandler myChatMemberHandler;
+    private final MessageHandler messageHandler;
+    private final ChannelPost channelPost;
+    private final AdminMenu adminMenu;
+    private final Menu menu;
 
     @Override
     public String getBotUsername() {
@@ -26,7 +27,7 @@ public class Bot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "5248410501:AAGBoZUW7sVDxLAOIa3cHOdNrwLaBC4Hnhw";
+        return "5248410501:AAEOks-u44rduYluqby926fDjcMrD0RWA-Y";
     }
 
     @Override

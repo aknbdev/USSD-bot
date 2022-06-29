@@ -114,6 +114,7 @@ public class AdminMenu {
                     codeMessage.setSendMessage(sendMessage);
                     codeMessage.setCodeMessageType(CodeMessageType.MESSAGE);
                 }
+
             } else if (message.hasVideo()){
                 String id = message.getVideo().getFileId();
                 Integer duration = message.getVideo().getDuration();
